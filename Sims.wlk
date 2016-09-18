@@ -17,6 +17,11 @@ class Sim
 	
 	method valoracion(sim)
 	
+	method simMasValorado()
+	{
+		return amigos.max({amigo => self.valoracion(amigo)})
+	}
+	
 	method estadoDeAnimo()
 	{
 		return estadoDeAnimo
@@ -253,6 +258,11 @@ class SimSuperficial inherits Sim
 
 class SimBuenazo inherits Sim
 {
+	override method simMasValorado()
+	{
+		return null
+	}
+	
 	override method valoracion(sim)
 	{
 		return nivelFelicidad/2
@@ -266,6 +276,11 @@ class SimBuenazo inherits Sim
 
 class SimPeleado inherits Sim
 {
+	override method simMasValorado()
+	{
+		return null
+	}
+
 	override method valoracion(sim)
 	{
 		return 0
